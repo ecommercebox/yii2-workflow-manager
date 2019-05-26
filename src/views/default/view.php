@@ -6,7 +6,6 @@
 
 use cornernote\workflow\manager\models\Transition;
 use yii\helpers\Html;
-use raoul2000\workflow\view\WorkflowViewWidget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\helpers\Url;
@@ -103,15 +102,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
         </div>
         <div class="col-md-6">
-            <?php
-            if ($model->statuses) {
-                echo WorkflowViewWidget::widget([
-                    'workflow' => Yii::$app->workflowSource->getWorkflow($model->id),
-                    'containerId' => 'workflowView'
-                ]);
-                echo '<div id="workflowView" style="height: 400px;"></div>';
-            }
-            ?>
         </div>
     </div>
 
